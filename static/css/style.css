@@ -404,6 +404,10 @@ nav.expend {
     background-color: #f6f6f6;
 }
 
+.likeRule>div:hover>#like path{
+    fill: #FF1A1A;
+}
+
 
 #like{
     margin: 10px;
@@ -413,9 +417,8 @@ nav.expend {
 }
 
 #like path{
-    stroke:#dddddd;
-    stroke-width: -2px;
-    fill:none;
+    fill: #dddddd;
+    transition: fill 0.3s;
 }
 
 #like path.active{

@@ -19,9 +19,15 @@ if (!empty($id)) {
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>大咖图库</title>
+    <title><?php
+        if(!empty($content)){
+            echo $content . '_纹身大咖图案大全';
+        }else{
+            echo '纹身大咖图案大全';
+        }
+        ?></title>
     <meta name="keywords" content="<?php
-    echo '这里是几个每次都会出现的关键词，每个关键字以英文逗号结尾';
+    echo '纹身,刺青,纹身师,纹身图片,纹身图案,';
     if(!empty($tags)){
         for ($i = 0; $i < count($tags); $i++) {
             echo $tags[$i] . ',';

@@ -6,18 +6,6 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link href="static/css/style.css?321" rel="stylesheet">
-<!--    <script>-->
-<!--        //是否移动端判断-->
-<!--        g$isMobile = navigator.userAgent.match(/mobile/i) != null;-->
-<!---->
-<!--        //移动端显示设置-->
-<!--        if (g$isMobile) {-->
-<!--            var m = document.createElement("META");-->
-<!--            m.setAttribute("name", "viewport");-->
-<!--            m.setAttribute("content", "width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no");-->
-<!--            document.head.appendChild(m);-->
-<!--        }-->
-<!--    </script>-->
 </head>
 <body>
 
