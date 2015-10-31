@@ -4,8 +4,8 @@ if ($_GET) {
 }
 
 if (!empty($id)) {
-    $baseurl = "http://123.57.42.13:3366/";
-//    $baseurl = "http://api.meizhanggui.cc:3366/";
+//    $baseurl = "http://123.57.42.13:3366/";
+    $baseurl = "http://api.meizhanggui.cc:3366/";
     $url = $baseurl . "feeds/?_method=GET&feed_id=" . $id;
     $json = json_decode(file_get_contents($url), true);
 
@@ -56,6 +56,10 @@ if (!empty($id)) {
 </nav>
 
 <div id="main">
+
+    <div class="flu-main">
+        <div class="banner"></div>
+    </div>
 
     <div id="details" class="flu-main">
         <?php
@@ -243,7 +247,11 @@ if (!empty($id)) {
 
     $('.likeRule>div').click(function () {
         location.href = 'http://www.wenshendaka.com';
-    })
+    });
+
+    $('.banner').click(function () {
+        location.href = 'http://www.wenshendaka.com';
+    });
 
 
 </script>

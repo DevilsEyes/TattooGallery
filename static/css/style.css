@@ -96,6 +96,8 @@ nav img {
     opacity: 0;
     color:white;
     overflow: hidden;
+    box-shadow: none;
+    box-shadow:0 0 0 10px rgba(0,0,0,0.3) inset;
     transition: opacity 0.3s;
 }
 
@@ -104,12 +106,13 @@ nav img {
 }
 
 .cover h4{
-    margin: 20px 0 0 20px;
+    margin: 20px 20px 0 20px;
     font-size: 30px;
 }
 
 .cover p{
     margin: 10px 20px;
+    color: #dddddd;
 }
 
 .cover:hover{
@@ -363,6 +366,15 @@ nav.expend {
 
 #slider>div{
     display: inline-block;
+}
+
+.banner{
+    margin:0 30px;
+    border-top: 10px solid #fafafa;
+    background: url("../img/banner.jpg") #000000 no-repeat center;
+    background-size: contain;
+    height: 80px;
+    cursor: pointer;
 }
 
 .avatar{

@@ -2,10 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>大咖图库</title>
-    <meta name="keywords" content=""/>
-    <meta name="description" content=""/>
-    <link href="static/css/style.css?321" rel="stylesheet">
+    <title>纹身大咖图案大全 - 最新的纹身刺青图片手稿都在这儿！</title>
+    <meta name="keywords" content="纹身,刺青,tattoo,纹身师,纹身图案,纹身图片,文身图,纹身圈,纹身吧,纹身大咖,纹身手稿,纹身勾线图"/>
+    <meta name="description" content="最全最新的纹身图片和纹身图案大全，国内外纹身师的优秀作品和手稿欣赏，纹身大咖官方图库。"/>
+    <link href="static/css/style.css?123" rel="stylesheet">
 </head>
 <body>
 
@@ -22,6 +22,9 @@
 
 <div id="main">
 
+    <div class="flu-main">
+        <div class="banner"></div>
+    </div>
 
     <div id="waterfall" class="flu-main">
         <?php
@@ -31,8 +34,8 @@
         }
         if (empty($page)) $page = 1;
 
-        $baseurl = "http://123.57.42.13:3366/";
-//        $baseurl = "http://api.meizhanggui.cc:3366/";
+//        $baseurl = "http://123.57.42.13:3366/";
+        $baseurl = "http://api.meizhanggui.cc:3366/";
         $url = $baseurl . "feeds/recommendWithCount?_method=GET&limit=30&sector=30&count=true&index=" . ($page * 30 - 30);
         if (!empty($tag)) $url = $url . "&tag=" . $tag;
         $json = json_decode(file_get_contents($url), true);
@@ -238,6 +241,10 @@
     $(window).resize(function () {
         waterfall.Refresh();
     });
+
+    $('.banner').click(function () {
+        location.href = 'http://www.wenshendaka.com';
+    })
 
 </script>
 
