@@ -16,16 +16,16 @@ body {
     background-color: #fafafa;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1500px) {
     .flu-main {
-        width: 1400px;
+        width: 1430px;
     }
     .flu-v16-9{
-        height: 787px;
+        height: 804px;
     }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
     .flu-main {
         width: 1150px;
     }

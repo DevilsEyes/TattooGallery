@@ -5,13 +5,14 @@
     <title>纹身大咖图案大全 - 最新的纹身刺青图片手稿都在这儿！</title>
     <meta name="keywords" content="纹身,刺青,tattoo,纹身师,纹身图案,纹身图片,文身图,纹身圈,纹身吧,纹身大咖,纹身手稿,纹身勾线图"/>
     <meta name="description" content="最全最新的纹身图片和纹身图案大全，国内外纹身师的优秀作品和手稿欣赏，纹身大咖官方图库。"/>
-    <link href="static/css/style.css?123" rel="stylesheet">
+    <link href="static/css/style.css?12342" rel="stylesheet">
 </head>
 <body>
 
 <nav>
     <div class="flu-main">
         <a href="index.php"><img src="static/img/logo.png" alt="纹身大咖图库"></a>
+
         <div id="selector">
             <div id="selectParts">部位</div>
             <div id="selectStyle">风格</div>
@@ -34,7 +35,7 @@
         }
         if (empty($page)) $page = 1;
 
-//        $baseurl = "http://123.57.42.13:3366/";
+        //        $baseurl = "http://123.57.42.13:3366/";
         $baseurl = "http://api.meizhanggui.cc:3366/";
         $url = $baseurl . "feeds/recommendWithCount?_method=GET&limit=30&sector=30&count=true&index=" . ($page * 30 - 30);
         if (!empty($tag)) $url = $url . "&tag=" . $tag;
@@ -45,7 +46,7 @@
         );
 
         $list = $json["data"]["list"];
-        $count =  $json["data"]['count'];
+        $count = $json["data"]['count'];
         if (count($list) > 0) {
             for ($i = 0; $i < count($list); $i++) {
 
@@ -69,7 +70,7 @@
                 echo "<div class='node'>";
                 echo "    <a style='width:" . $w . "px;height:" . $h . "px' class='cover' href='" . $href . "'>";
                 echo "        <h4>" . $content . "</h4>";
-                echo "        <p>" . str_ireplace('#',' ',$tags) . "</p>";
+                echo "        <p>" . str_ireplace('#', ' ', $tags) . "</p>";
                 echo "    </a>";
                 echo "    <img src='" . $imgUrl . "' style='width:" . $w . "px;height:" . $h . "px'>";
                 echo "</div>";
@@ -83,29 +84,29 @@
     </div>
 
     <?php
-        $max = ceil($count/30);
-//        echo '<script>alert("'.$count.'")</script>';
+    $max = ceil($count / 30);
+    //        echo '<script>alert("'.$count.'")</script>';
     ?>
     <div id="page">
-        <div  class="flu-main">
+        <div class="flu-main">
             <?php
-            if($page<5){
+            if ($page < 5) {
                 $start = 1;
-                $end = $max<9?$max:9;
-            }else{
+                $end = $max < 9 ? $max : 9;
+            } else {
                 $start = $page - 4;
-                $end = $max<($page+4)?$max:($page+4);
+                $end = $max < ($page + 4) ? $max : ($page + 4);
             }
-            if(empty($tag)){
+            if (empty($tag)) {
                 $href = 'index.php?page=';
-            }else{
-                $href = 'index.php?tag='.$tag.'&page=';
+            } else {
+                $href = 'index.php?tag=' . $tag . '&page=';
             }
-            for($i=$start;$i<=$end;$i++){
-                if($i==$page){
-                    echo '<p class="active">'.$page.'</p>';
-                }else{
-                    echo '<a href="'.$href.$i.'">'.$i.'</a>';
+            for ($i = $start; $i <= $end; $i++) {
+                if ($i == $page) {
+                    echo '<p class="active">' . $page . '</p>';
+                } else {
+                    echo '<a href="' . $href . $i . '">' . $i . '</a>';
                 }
             }
             ?>
@@ -159,7 +160,11 @@
     </div>
 </div>
 
+<script
+    type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1256682352'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1256682352' type='text/javascript'%3E%3C/script%3E"));</script>
 <script src="vender/dev.min.js"></script>
+
 <script>
     var waterfall = {
         o: null,
@@ -210,33 +215,33 @@
         style: '欧美#传统#习俗#肖像#清新#写实#国画#手稿#男#女'
     };
 
-//    $(document).ready(function () {
-        $('#selectParts').click(function () {
-            sideBar.expend('#parts');
-        });
-        $('#selectStyle').click(function () {
-            sideBar.expend('#style');
-        });
-        $('#selectElement').click(function () {
-            sideBar.expend('#element');
-        });
-        $('#sideBar>img').click(sideBar.close);
-        waterfall.Set();
-        var tag = location.search.match(/tag=([^\b&]*)/);
-        if (tag) {
-            tag = decodeURIComponent(tag[1]);
+    //    $(document).ready(function () {
+    $('#selectParts').click(function () {
+        sideBar.expend('#parts');
+    });
+    $('#selectStyle').click(function () {
+        sideBar.expend('#style');
+    });
+    $('#selectElement').click(function () {
+        sideBar.expend('#element');
+    });
+    $('#sideBar>img').click(sideBar.close);
+    waterfall.Set();
+    var tag = location.search.match(/tag=([^\b&]*)/);
+    if (tag) {
+        tag = decodeURIComponent(tag[1]);
 
-            $('#element a').each(function () {
-                if (tag == $(this).text()) {
-                    $(this).addClass('active');
-                }
-            });
+        $('#element a').each(function () {
+            if (tag == $(this).text()) {
+                $(this).addClass('active');
+            }
+        });
 
-            if (tags.element.indexOf(tag) != -1)$('#selectElement').addClass('active').text(tag);
-            if (tags.style.indexOf(tag) != -1)$('#selectStyle').addClass('active').text(tag);
-            if (tags.parts.indexOf(tag) != -1)$('#selectParts').addClass('active').text(tag);
-        }
-//    });
+        if (tags.element.indexOf(tag) != -1)$('#selectElement').addClass('active').text(tag);
+        if (tags.style.indexOf(tag) != -1)$('#selectStyle').addClass('active').text(tag);
+        if (tags.parts.indexOf(tag) != -1)$('#selectParts').addClass('active').text(tag);
+    }
+    //    });
 
     $(window).resize(function () {
         waterfall.Refresh();
