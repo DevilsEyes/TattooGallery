@@ -102,12 +102,18 @@
             } else {
                 $href = 'index.php?tag=' . $tag . '&page=';
             }
+            if ($page != 1) {
+                echo '<a href="' . $href . ($page - 1) . '"><</a>';
+            }
             for ($i = $start; $i <= $end; $i++) {
                 if ($i == $page) {
                     echo '<p class="active">' . $page . '</p>';
                 } else {
                     echo '<a href="' . $href . $i . '">' . $i . '</a>';
                 }
+            }
+            if ($page != $max) {
+                echo '<a href="' . $href . ($page + 1) . '">></a>';
             }
             ?>
         </div>
@@ -162,7 +168,7 @@
 
 <script
     type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan id='cnzz_stat_icon_1256682352'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1256682352' type='text/javascript'%3E%3C/script%3E"));</script>
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1256682352' style='display:none;'%3E%3C/span%3E%3Cscript  src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1256682352' type='text/javascript'%3E%3C/script%3E"));</script>
 <script src="vender/dev.min.js"></script>
 
 <script>
